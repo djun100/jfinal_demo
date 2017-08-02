@@ -1,0 +1,30 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.demo'
+version = '3.1'
+
+description = """jfinal_demo_for_maven Maven Webapp"""
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+
+
+repositories {
+        
+     maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'com.jfinal', name: 'jetty-server', version:'8.1.8'
+    compile group: 'com.jfinal', name: 'jfinal', version:'3.1'
+    compile group: 'log4j', name: 'log4j', version:'1.2.16'
+    compile group: 'mysql', name: 'mysql-connector-java', version:'5.1.20'
+    compile group: 'com.alibaba', name: 'druid', version:'1.0.29'
+    compile group: 'com.jfinal', name: 'cos', version:'2017.5'
+    testCompile group: 'junit', name: 'junit', version:'3.8.1'
+}
